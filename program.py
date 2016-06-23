@@ -19,14 +19,16 @@ def main():
 
 
 def start_counter():
-    cmd = input('Would you like to start/reset the counter (please press y/n)?')
-    if cmd.lower().strip() == 'y':
-        now = datetime.datetime.now()
-        start_time = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute)
-        print('You started your counter at {}:{} on {}'.format(start_time.hour, start_time.minute, start_time.date()))
-        return start_time
-    elif cmd.lower().strip() == 'n':
-        quit()
+    cmd = 'none'
+    while cmd != 'y' or cmd != 'n':
+        cmd = input('Would you like to start/reset the counter (please press y/n)?')
+        if cmd.lower().strip() == 'y':
+            now = datetime.datetime.now()
+            start_time = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute)
+            print('You started your counter at {}:{} on {}'.format(start_time.hour, start_time.minute, start_time.date()))
+            return start_time
+        elif cmd.lower().strip() == 'n':
+            quit()
 
 
 
